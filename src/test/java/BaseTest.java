@@ -1,16 +1,14 @@
 import aquality.selenium.browser.AqualityServices;
 import aquality.selenium.browser.Browser;
-import aquality.selenium.elements.interfaces.IElementFactory;
+import framework.utils.ReadPropertyTool;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public abstract class BaseTest {
 
-    private static final String MAIN_URL = "http://example.com/";
-    protected final IElementFactory elementFactory;
+    private static final String MAIN_URL = ReadPropertyTool.getData("mainUrl");;
 
     protected BaseTest() {
-        elementFactory = AqualityServices.getElementFactory();
     }
 
     @BeforeMethod
